@@ -1,0 +1,53 @@
+Class ObjectScript.Principal Extends %Persistent
+{
+
+ClassMethod Main()
+{
+	//SISTEMA DE CADASTRO//
+	read !, "Bem-Vindo ao sistema de cadastro, aperte ENTER para continuar", enter
+	
+	//Entrada Dos dados
+	write !!
+	for i = 1:1
+	{
+		read "Nome: ", nome
+		if nome = ""
+		{
+			write !, "Preencha o campo Nome para continuar"
+		} else{quit}	
+	}
+   write !
+    for i = 1:1
+    {
+	    read "Telefone: ", telefone
+	    if nome = ""
+	    {
+		    write !, "Preencha o campo Telefone para continuar"
+		} else{quit}
+    }
+    
+    write !
+    for i = 1:1
+    {
+	    read "Data Nasc.: ", dn
+	    if nome = ""
+	    {
+		    write !, "Preencha o campo Data Nascimento para continuar"
+		} else{quit}
+    }
+    
+    
+
+
+	//Saída dos dados
+    write #, !, "Nome: ", ?13, nome
+    write !, "Telefone: ", ?13, telefone
+    write !, "Data Nasc.: ", ?13, dn
+    
+    read !!, "Seus dados estão certos? (S/N) ", result, !
+    
+	
+	write:(result = "Sim") "Cadastro feito com Sucesso" quit
+}
+
+}
